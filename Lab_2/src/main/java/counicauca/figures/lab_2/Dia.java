@@ -52,12 +52,13 @@ public class Dia {
     }
     private void algorithm_voraz(){
         Actividad a = actividades.getFirst();
+        this.actividades_Dia.add(a);
         actividades.removeFirst();
         for(Actividad b: actividades){
-            if(a.getHoraInicio()<b.getHoraFin()){
-                this.actividades_Dia.add(a);
+            if(a.getHoraFin()<=b.getHoraInicio()){
+                this.actividades_Dia.add(b);
+                a=b;
             }
-            a=b;
         }   
     }
 }

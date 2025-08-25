@@ -41,8 +41,18 @@ public class Actividad {
     public void setAccion(String accion) {
         this.accion = accion;
     }
+    public String line(){
+        int i=0;
+        int tamanio = accion.length();
+        String line = "=======";
+        while(i <= tamanio){
+            line = line.concat("=");
+            i++;
+        }
+        return line;
+    }
    @Override
    public String toString(){
-       return "inicio: "+horaInicio+"\nfinal: "+horaFin+"\naccion: "+accion;
+       return "inicio: "+horaInicio+"\nfinal: "+horaFin+"\naccion: "+accion+"\n"+line();
    }
 }
