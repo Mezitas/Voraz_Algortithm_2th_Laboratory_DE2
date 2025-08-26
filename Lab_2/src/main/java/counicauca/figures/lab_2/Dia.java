@@ -21,6 +21,9 @@ public class Dia {
     }
     //methods
     public void mostrarActividades(){
+        if(actividades.isEmpty()){
+            System.out.println("El dia no tiene ninguna actividad");
+        }
         Iterator<Actividad> iterator = actividades.iterator();
         while(iterator.hasNext()){
             System.out.println(iterator.next().toString());
