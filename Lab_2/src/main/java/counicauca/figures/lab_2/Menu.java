@@ -61,7 +61,7 @@ public class Menu{
                 String accion = sc.nextLine();
                 if(vString(accion)){break;}
                 
-                dia.eliminar(horaI,horaF,accion);
+                dia.eliminar(new Actividad(horaI,horaF,accion));
             }
             case 5 ->{
                 dia.algorithm_voraz();
