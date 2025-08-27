@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author ING-SIS
+ * @author JOSE ALEJANDRO LOPERA / JUAN DAVID MEZA PAZ
  */
 public class Menu{
     private Scanner sc;
@@ -19,12 +19,21 @@ public class Menu{
     }
     public boolean Visual(){
         boolean repetir = true;
+        do{
         System.out.println("Elige la opcion que deseas: ");
         System.out.println("1) Agregar tarea");
         System.out.println("2) Mostrar");
-        System.out.println("5) Salir");
+        System.out.println("3) Ordenar");
+        System.out.println("4) Eliminar");
+        System.out.println("5) Aplicar voraz");
+        System.out.println("6) Salir");
         String numeroS = sc.nextLine();
         int election = vInt(numeroS);
+        if (election < 1 || election > 6) {
+            System.out.println("Escribe un valor válido (1-6)\n");
+        }
+
+    } while (election < 1 || election > 6);
         switch(election){
             case 1 ->{
                 System.out.println("Escribe la hora de inicio: ");
@@ -40,7 +49,25 @@ public class Menu{
                 dia.agregar(new Actividad(horaI,horaF,accion));
             }
             case 2 ->{dia.mostrarActividades();}
+            case 3 ->{dia.ordenar();}
+            case 4 ->{
+                System.out.println("Escribe la hora de inicio: ");
+                int horaI = transformToHour(sc.nextLine());
+                if(horaI<0){break;}
+                System.out.println("Escribe la hora de finalizacion: ");
+                int horaF = transformToHour(sc.nextLine());
+                if(horaF<0){break;}
+                System.out.println("Escribe la actividad a eliminar: ");
+                String accion = sc.nextLine();
+                if(vString(accion)){break;}
+                
+                dia.eliminar(horaI,horaF,accion);
+            }
             case 5 ->{
+                dia.algorithm_voraz();
+                System.out.println("Algoritmo Voraz aplicado correctamente.");
+            }
+            case 6 ->{
                 System.out.println("Finalizando...");
                 repetir = false;
             }
