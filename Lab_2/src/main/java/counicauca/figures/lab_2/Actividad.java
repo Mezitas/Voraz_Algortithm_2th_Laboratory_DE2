@@ -6,7 +6,7 @@ package counicauca.figures.lab_2;
 
 /**
  *
- * @author ING-SIS
+ * @author JOSE ALEJANDRO LOPERA / JUAN DAVID MEZA PAZ
  */
 public class Actividad {
     private int horaInicio; 
