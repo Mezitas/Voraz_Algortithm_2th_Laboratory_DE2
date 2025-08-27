@@ -9,7 +9,7 @@ import java.util.Iterator;
 
 /**
  *
- * @author ING-SIS
+ * @author JOSE ALEJANDRO LOPERA / JUAN DAVID MEZA PAZ
  */
 public class Dia {
     private ArrayList<Actividad> actividades;
